@@ -23,7 +23,7 @@ git commit -m 'deploy'
 # git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
 
 # ssh 模式
-git push -f git@github.com:megaJingHua/mega-works-fcuam-backstage.git
+git push -f git@github.com:megaJingHua/mega-works-fcuam-backstage.git master:gh-pages
 
 # HTTPS 模式
 # git push -f https://github.com/hsiangfeng/HexfootMusic.git master:gh-pages
