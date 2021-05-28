@@ -32,7 +32,7 @@ export default {
   methods: {
     login() {
       var data = { username: 'ivan',password: '1234'}
-      this.axios.post('api/auth/login',data).then((d)=>{
+      this.axios.post('/auth/login',data).then((d)=>{
         console.log(d)
       })
     },
