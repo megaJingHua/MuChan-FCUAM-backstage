@@ -11,7 +11,9 @@ import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import PbulicFunction from './public'
 axios.defaults.baseURL = 'https://api.mega1109.com';
+Vue.use(PbulicFunction);
 Vue.use(VueAxios,axios);
 Vue.use(ElementUI);
 Vue.config.productionTip = false

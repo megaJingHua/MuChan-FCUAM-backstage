@@ -6,7 +6,7 @@
         <p class="px-2 py-2">逢甲大學應用數學系官網管理後台</p>
         <el-form ref="form" :model="form" label-width="50px">
           <el-form-item label="帳號">
-            <el-input v-model="form.account"></el-input>
+            <el-input v-model="form.username"></el-input>
           </el-form-item>
           <el-form-item label="密碼">
             <el-input v-model="form.password"></el-input>
@@ -23,18 +23,15 @@ export default {
   name: "App",
   data() {
     return {
-      form: {},
+      form: {
+        username: "ivan",
+        password: "",
+      },
     };
-  },
-  mounted(){
-    console.log(this)
   },
   methods: {
     login() {
-      var data = { username: 'ivan',password: '1234'}
-      this.axios.post('/auth/login',data).then((d)=>{
-        console.log(d)
-      })
+      this.$store.commit("Login", this.form);
     },
   },
 };

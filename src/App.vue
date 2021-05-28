@@ -22,14 +22,17 @@
 <script>
 import Nav from "@/components/Nav";
 import Sidebar from "@/components/Sidebar";
-import Login from "@/pages/Login"
+import Login from "@/pages/Login";
 export default {
   name: "App",
   components: { Nav, Sidebar, Login },
   computed: {
     isLogin() {
-      // 在這邊吐回state裡面的isLoading
-      return this.$store.state.login;
+      if (this.$store.state.login) {
+        return true;
+      } else {
+        return localStorage.token ? true : false;
+      }
     },
   },
 };
@@ -43,8 +46,9 @@ export default {
 
 #app {
   position: relative;
-  font-family: "FZLanTingHeiS-R-GB", "arial", "Hiragino Sans GB", "Microsoft Yahei",
-    "微软雅黑", "宋体", "Tahoma", "Arial", "Helvetica", "STHeiti";
+  font-family: "FZLanTingHeiS-R-GB", "arial", "Hiragino Sans GB",
+    "Microsoft Yahei", "微软雅黑", "宋体", "Tahoma", "Arial", "Helvetica",
+    "STHeiti";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
