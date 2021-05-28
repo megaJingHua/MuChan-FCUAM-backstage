@@ -9,7 +9,10 @@ import 'element-ui/lib/theme-chalk/display.css';
 import "jquery";
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
+Vue.use(VueAxios,axios);
 Vue.use(ElementUI);
 Vue.config.productionTip = false
 
